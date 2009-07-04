@@ -4,4 +4,6 @@ class Project < ActiveRecord::Base
   
   attr_accessible :name, :short_description, :link, :long_description, :team_lead, :team_lead_email, :site_image
   
+  validates_presence_of :name, :short_description, :link
+  
 end

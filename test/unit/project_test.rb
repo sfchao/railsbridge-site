@@ -7,4 +7,6 @@ class ProjectTest < ActiveSupport::TestCase
   should_allow_mass_assignment_of :name, :short_description, :link, :long_description, :team_lead, :team_lead_email
   should_not_allow_mass_assignment_of :created_at, :updated_at, :id
   
+  should_validate_presence_of :name, :short_description, :link
+  
 end

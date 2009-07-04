@@ -5,4 +5,6 @@ class NewsItemTest < ActiveSupport::TestCase
   should_allow_mass_assignment_of :headline, :lede, :body
   should_not_allow_mass_assignment_of :created_at, :updated_at, :id
   
+  should_validate_presence_of :headline, :lede
+  
 end
