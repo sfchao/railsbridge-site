@@ -15,11 +15,6 @@ after "deploy:update", "deploy:link_config"
 # directories to preserve between deployments
 set :asset_directories, ['public/system/site_images']
     
-# Gem dependencies - not needed with config.gem?
-# depend :remote, :gem, "authlogic",            "=2.0.14"
-# depend :remote, :gem, "mislav-will_paginate", "=2.2.3"
-# depend :remote, :gem, "jscruggs-metric_fu",   "=1.0.2"
-
 namespace :deploy do
   desc "Re-link config files"
   task :link_config, :roles => :app do
