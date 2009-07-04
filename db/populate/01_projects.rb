@@ -27,4 +27,4 @@ Project.create_or_update(:id => 8, :name => "RailsBridge Site", :short_descripti
 
 
 # Copy starting images
-FileUtils.cp_r(File.join(Rails.root, "db", "populate", "site_images") + "/", File.join(Rails.root, "public", "system"))
+FileUtils.cp_r(File.join(Rails.root, "db", "populate", "site_images") + "/", File.join(Rails.root, "public", "system", "site_images"))
