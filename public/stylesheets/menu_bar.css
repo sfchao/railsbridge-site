@@ -15,10 +15,11 @@
 
 #networkToolbarTriger {
 	height: 20px;
-	float: right;
+	position: absolute;
+	margin-left: 760px;
 }
 
-.networkToolbarContainer {
+#networkToolbarContainer {
 	width: 960px;
 	margin: 0 auto;
 }
