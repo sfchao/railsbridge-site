@@ -1,45 +1,43 @@
-/* @group Menu Toolbar */
-/*HTML + CSS that can be used across all sites as top bar */
+/* @group Tool Bar */
 
-#menuToolbar {
+#networkToolbar {
 	width: 100%;
 	top: 0;
 	left: 0;
 	z-index: 10000;
-	position: fixed;
+	position: relative;
 }
 
-#menuToolbarContainer {
-	height: 40px;
+#networkToolbarMargin {
+	height: 5px;
 	background: #800219;
 }
 
-#menuToolbarShadow {
-	-moz-box-shadow: 2px 2px 4px #666666;
-	-webkit-box-shadow: 2px 2px 4px #666666;
-	height: 3px;
-	position: absolute;
-	width: 100%;
-	top: 37px;
-	z-index: 9999;
+#networkToolbarTriger {
+	height: 20px;
+	float: right;
 }
 
-#menuToolbarContent {
+.networkToolbarContainer {
 	width: 960px;
 	margin: 0 auto;
-	height: 20px;
-	padding: 10px 0;
-	color: #999;
 }
 
-#menuToolbarContent strong {
-	color: #FFF;
+#toolbarContainer {
+	width: 100%;
+	background: #333 url(../images/rbnShadow.png) repeat-x 0 bottom;
+}
+#menuToolbarContent {
+	width: 100%;
+	padding: 20px 0 20px;
+	color: #999;
+	text-align: center;
 }
 
 #menuToolbarContent a {
 	color: #FFFF99;
-	margin: 0 5px;
 	font-weight: bold;
+	margin: 10px 5px 0;
 }
 
 /* @end */
