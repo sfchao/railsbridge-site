@@ -2,7 +2,7 @@ require 'test_helper'
 
 class NewsItemsControllerTest < ActionController::TestCase
   
-  should_have_before_filter :require_team_lead_user, :except => [ :index, :show ]
+  should_have_before_filter :require_team_lead_user, :except => [ :index, :show, :feed ]
   should_have_before_filter :find_news_item, :only => [ :show, :edit, :update, :destroy ]
 
   context "on GET to :index" do
@@ -139,4 +139,19 @@ class NewsItemsControllerTest < ActionController::TestCase
     should_redirect_to("the news_items page") { news_items_path }
   end
   
+  context "on GET to :feed" do
+    setup do
+      @the_news_item = NewsItem.generate!
+      NewsItem.stubs(:all).returns([@the_news_item])
+      get :feed
+    end
+    
+    should_assign_to(:news_items) { [@the_news_item] }
+    should_not_assign_to(:page_title)
+    should_respond_with :success
+    should_render_template :feed
+    should_render_without_layout
+    should_not_set_the_flash
+  end
+
 end

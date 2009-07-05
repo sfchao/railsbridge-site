@@ -1,0 +1,19 @@
+xml.instruct! :xml, :version=>"1.0" 
+xml.rss(:version=>"2.0"){
+  xml.channel{
+    xml.title("RailsBridge News")
+    xml.link("http://railsbridge.org/")
+    xml.description("News and updates from RailsBridge.")
+    xml.language('en-us')
+      @news_items.each do |news_item|
+        xml.item do
+          xml.title(news_item.headline)
+          xml.description(textilize(news_item.lede) + textilize(news_item.body))      
+          xml.author("RailsBridge")               
+          xml.pubDate(news_item.updated_at.strftime("%a, %d %b %Y %H:%M:%S %z"))
+          xml.link(news_item_path(news_item))
+          xml.guid(news_item_path(news_item))
+        end
+      end
+  }
+}

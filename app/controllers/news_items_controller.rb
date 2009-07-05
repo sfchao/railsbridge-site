@@ -1,7 +1,9 @@
 class NewsItemsController < ApplicationController
 
-  before_filter :require_team_lead_user, :except => [ :index, :show ]
+  before_filter :require_team_lead_user, :except => [ :index, :show, :feed ]
   before_filter :find_news_item, :only => [ :show, :edit, :update, :destroy ]
+
+  layout "application", :except => :feed
 
   def index
     @news_items = NewsItem.all(:order => "created_at DESC")
@@ -47,6 +49,10 @@ class NewsItemsController < ApplicationController
     redirect_to(news_items_url)
   end
   
+  def feed
+    @news_items = NewsItem.all(:order => "updated_at DESC", :limit => 15)
+  end
+
 private
 
   def find_news_item
