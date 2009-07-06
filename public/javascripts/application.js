@@ -2,7 +2,7 @@
 Event.observe(window, 'load', function() { init() });
 function init(){
 	$('menuTrigger').observe('click', function() {
-		triggerEffect(this,'toolbarContainer','slide', 'images/rbnDownButton.png', 'images/rbnUpButton.png');
+		triggerEffect(this,'toolbarContainer','slide', '/images/rbnDownButton.png', '/images/rbnUpButton.png');
 	});
 }
 function triggerEffect(srcElement,divId, effect, firstImg, secondImg){
