@@ -168,7 +168,7 @@ hr {
 	width: 360px;
 	height: 160px;
 	float: left;
-	background: transparent url(../images/logo.png) no-repeat center center;
+	background: transparent url(../images/logo.png) no-repeat left 10px;
 	position: relative;
 	text-indent: -100000px;
 }
