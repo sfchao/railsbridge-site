@@ -22,4 +22,8 @@ class PagesController < ApplicationController
     @page_title = "About RailsBridge"
   end
   
+  def sponsors
+    @page_title = "RailBridge's Sponsors"
+  end
+  
 end

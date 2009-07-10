@@ -13,7 +13,7 @@ Project.create_or_update(:id => 4, :name => "Rails Courseware", :short_descripti
   :link => "http://railstutor.org", :long_description => "", :team_lead => "Dana Jones", :team_lead_email => "djones@larkfarm.com",
   :site_image_file_name => 'tutor-1.png', :site_image_content_type => "image/png")
 Project.create_or_update(:id => 5, :name => "Student Code Reviews", :short_description => "Feedback for post-secondary students", 
-  :link => "", :long_description => "", :team_lead => "Mike Gunderloy", :team_lead_email => "mikeg1@larkfarm.com",
+  :link => "http://", :long_description => "", :team_lead => "Mike Gunderloy", :team_lead_email => "mikeg1@larkfarm.com",
   :site_image_file_name => 'code.png', :site_image_content_type => "image/png")
 Project.create_or_update(:id => 6, :name => "Ruby Challenge", :short_description => "Puzzle-based way to learn Ruby", 
   :link => "http://rubychallenge.com/", :long_description => "", :team_lead => "Marianna Kenesy", :team_lead_email => "kenesymarianna@gmail.com",
@@ -27,4 +27,6 @@ Project.create_or_update(:id => 8, :name => "RailsBridge Site", :short_descripti
 
 
 # Copy starting images
+# TODO: eladmeidar: on my machine, there was no /public/system/site_images, only /public/site_images. i removed the "system" from
+# the 2nd File.join statement to make it run. restored after rake db:populate was successful.
 FileUtils.cp_r(File.join(Rails.root, "db", "populate", "site_images") + "/", File.join(Rails.root, "public", "system", "site_images"))
