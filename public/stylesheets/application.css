@@ -51,13 +51,13 @@ h1,h2,h3 {
 }
 
 h1 {
-	font-size: 1.7em;
+	font-size: 2em;
 	line-height: 1;
 	margin-bottom: 0.5em;
 }
 
 h2 {
-	font-size: 1.5em;
+	font-size: 1.4em;
 	margin-bottom: 0.75em;
 }
 
@@ -218,7 +218,7 @@ ul#topNav li a:hover {
 #contentWrapper {
 	min-height: 700px;
 	background-color: #FFF;
-	padding: 25px;
+	padding: 20px 25px 25px;
 	width: 910px;
 	margin: 0 auto;
 	display: block;
@@ -348,7 +348,19 @@ input.subscribeButton {
 
 #fullWidthContainer {
 	width: 910px;
+	display: inline-block;
+	position: relative;
 }
+
+/* @group Projects */
+
+.project {
+	float: left;
+	display: block;
+	width: 455px;
+}
+
+/* @end */
 
 #footer {
 	width: 100%;
@@ -364,6 +376,7 @@ input.subscribeButton {
 	color: #FFF;
 	font-size: 0.95em;
 	padding-top: 12px;
+	margin: 0;
 }
 
 #footer a {
