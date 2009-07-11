@@ -368,6 +368,47 @@ input.subscribeButton {
 
 /* @end */
 
+/* @group Sponsors */
+
+.sponsor {
+	margin-bottom: 10px;	
+}
+
+.sponsor .logo {
+	float: left;
+	display: block;
+	width: 30%;
+}
+
+.sponsor .plug {
+	float: right;
+	display: block;
+	width: 65%;
+}
+
+/* @end */
+
+/* @group Twitter updates */
+
+#twitterLink {
+	width: 100%;
+	text-align: right;
+}
+
+#twitter_update_list {
+	width: 100%;
+}
+
+#twitter_update_list li {
+	float: none;
+	width: 100%;
+	margin: 0 40px 0 20px;
+	list-style-type: circle;
+}
+
+/* @end */
+
+
 #footer {
 	width: 100%;
 	height: 40px;
@@ -399,4 +440,8 @@ input.subscribeButton {
 
 .last {
 	margin: 0;
+}
+
+.clear {
+	clear: both;
 }

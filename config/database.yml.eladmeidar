@@ -1,0 +1,6 @@
+development:
+  adapter: mysql
+  database: railsbridge-site_development
+  username: root
+  password:
+  encoding: utf8

@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.mission 'mission', :controller => "pages", :action => "mission"
   map.home 'home', :controller => "pages", :action => "home"
   map.about 'about', :controller => "pages", :action => "about"
+  map.sponsors 'sponsors', :controller => 'pages', :action => 'sponsors'
   map.help 'help', :controller => "pages", :action => "help"
   map.login 'login', :controller => "user_sessions", :action => "new"
   map.logout 'logout', :controller => "user_sessions", :action => "destroy"
