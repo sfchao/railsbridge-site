@@ -382,6 +382,26 @@ input.subscribeButton {
 
 /* @end */
 
+/* @group Twitter updates */
+
+#twitterLink {
+	width: 100%;
+	text-align: right;
+}
+
+#twitter_update_list {
+	width: 100%;
+}
+
+#twitter_update_list li {
+	float: none;
+	width: 100%;
+	margin: 0 40px 0 20px;
+	list-style-type: circle;
+}
+
+/* @end */
+
 
 #footer {
 	width: 100%;
