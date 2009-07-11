@@ -325,11 +325,6 @@ ul#topNav li a:hover {
 	color: #006699;
 }
 
-.twitterBird {
-	background: transparent url(../images/twitterBird.png) no-repeat right 4px;
-	width: 503px;
-}
-
 input.subscribe {
 	border: 1px solid #DADADA;
 	color: #999;
@@ -390,20 +385,62 @@ input.subscribeButton {
 
 /* @group Twitter updates */
 
+#twitter {
+	
+}
+
+#twitter img {
+	border-style: none;
+	top: 80px;
+	left: 140px;
+	position: relative;
+}
+
 #twitterLink {
 	width: 100%;
 	text-align: right;
+	margin-bottom: 5px;
 }
 
-#twitter_update_list {
+#twitterList {
 	width: 100%;
 }
 
-#twitter_update_list li {
+#twitterList li {
 	float: none;
 	width: 100%;
 	margin: 0 40px 0 20px;
-	list-style-type: circle;
+}
+
+#twitterList small {
+	font-weight: bold;
+}
+/*
+li {
+	border-top-style: dotted;
+	border-top-width: 1px;
+}
+
+li:first-child {
+	border-top-style: none;
+}
+
+.list {
+	width: 250px;
+	color: white;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	float: left;
+	padding: 10px;
+}
+
+.list h1 {
+	font-size: 18px;
+}
+*/
+
+.twitterBird {
+	background: transparent url(../images/twitterBird.png) no-repeat 150px 4px;
 }
 
 /* @end */

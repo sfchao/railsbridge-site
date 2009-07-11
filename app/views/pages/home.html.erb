@@ -58,16 +58,14 @@
 
   <div class="contentBox">
   	<div class="subTitleHolder">
-  		<div class="subTitle"><h2>Updates</h2>
+  		<div class="subTitle twitterBird"><h2><strong>Twitter</strong> Updates</h2></div>
+		<div class="subTitleLink"><a href="http://twitter.com/railsbridge" id="twitterLink" class="right">Follow <strong>RailsBridge</strong> on Twitter</a></div>
+	</div>
       	<div id="twitter">
-      	  <p>
-        	  <a href="http://twitter.com/railsbridge" id="twitterLink" class="right">Follow RailsBridge on Twitter</a>
-        	</p>
-      	  <ul id="twitter_update_list">
-      	  </ul>
+      	  <!-- <ul id="twitter_update_list"></ul>-->
+		  <%= image_tag("loader.gif", :id => "twitterPreloader", :alt => "Pre-loader", :size => "128x15") %>
+		  <div id="twitterList" style="display: none;"></div>
       	</div>
-      	<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
-      	<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/railsbridge.json?callback=twitterCallback2&amp;count=3"></script>
-  		</div>
-  	</div>
+  </div>
+
 </div>
