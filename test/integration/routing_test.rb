@@ -9,6 +9,13 @@ class RoutingTest < ActionController::IntegrationTest
     should_route :put, "/account", :action=>"update", :controller=>"users"
     should_route :delete, "/account", :action=>"destroy", :controller=>"users"
     should_route :post, "/account", :action=>"create", :controller=>"users"
+    should_route :get, "/documents", :action=>"index", :controller=>"documents"
+    should_route :post, "/documents", :action=>"create", :controller=>"documents"
+    should_route :get, "/documents/new", :action=>"new", :controller=>"documents"
+    should_route :get, "/documents/1/edit", :action=>"edit", :controller=>"documents", :id => 1
+    should_route :get, "/documents/1", :action=>"show", :controller=>"documents", :id => 1
+    should_route :put, "/documents/1", :action=>"update", :controller=>"documents", :id => 1
+    should_route :delete, "/documents/1", :action=>"destroy", :controller=>"documents", :id => 1
     should_route :get, "/news_items/feed", :action=>"feed", :controller=>"news_items"
     should_route :get, "/news_items", :action=>"index", :controller=>"news_items"
     should_route :post, "/news_items", :action=>"create", :controller=>"news_items"

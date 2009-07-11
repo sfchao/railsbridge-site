@@ -20,6 +20,7 @@ class PagesController < ApplicationController
   
   def about
     @page_title = "About RailsBridge"
+    @documents = Document.find(:all, :order => "created_at DESC", :limit => 5)
   end
   
   def sponsors

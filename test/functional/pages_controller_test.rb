@@ -36,4 +36,14 @@ class PagesControllerTest < ActionController::TestCase
     should_render_template :home
   end
   
+  context "on GET to :about" do
+    setup do
+      @the_document = Document.generate!
+      Document.stubs(:all).returns([@the_document])
+      get :about
+    end
+    
+    should_assign_to(:documents) { [@the_document] }
+  end
+  
 end

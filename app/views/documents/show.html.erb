@@ -1,0 +1,19 @@
+<div id="fullWidthContainer">
+  <div class="document">
+    <%= link_to "Download", @document.download.url %>
+    <h1><%=h @document.name %></h1>
+    <p>
+      <%= h @document.description %>
+    </p>
+    <p>
+      Uploaded by <%= @document.user.full_name %>
+    </p>
+  </div>
+
+  <% team_lead_only do %>
+    <div class="admin_links">
+      <%= link_to 'Edit', edit_document_path(@document) %> |
+      <%= link_to 'Back', documents_path %>
+    </div>
+  <% end %>
+</div>

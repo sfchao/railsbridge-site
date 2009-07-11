@@ -1,0 +1,25 @@
+<div id="fullWidthContainer">
+  <h1 class="redMarking">Rails<strong>Bridge</strong> Documents</h1>
+
+  <% @documents.each do |document| %>
+    <div class="document">
+      <h2><strong><%= h document.name %></strong></h2>
+		<p>
+		<%= link_to "Download", document.download.url, :class => "left" %>
+        <%=h document.description %>
+		</p>
+
+    </div>
+    <% team_lead_only do %>
+      <div class="admin_links">
+        <%= link_to 'Edit document', edit_document_path(document) %> | <%= link_to "Delete document", document, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% team_lead_only do %>
+    <div class="admin_links">
+      <%= link_to 'New document', new_document_path %>
+    </div>
+  <% end %>
+</div>
