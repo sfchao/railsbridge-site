@@ -50,7 +50,9 @@ class DocumentsControllerTest < ActionController::TestCase
   context "on POST to :create" do
     setup do
       controller.stubs(:require_team_lead_user).returns(true)
-      @the_document = Document.generate!
+      @current_user = User.generate
+      controller.stubs(:current_user).returns(@current_user)
+      @the_document = Document.generate!(:user_id => nil)
       Document.stubs(:new).returns(@the_document)
     end
     
@@ -64,6 +66,10 @@ class DocumentsControllerTest < ActionController::TestCase
       should_respond_with :redirect
       should_set_the_flash_to "Document was successfully created."
       should_redirect_to("the document page") { document_url(@the_document) }
+      
+      should "set the document's user" do
+        assert_equal @current_user.id, @the_document.user_id
+      end
     end
     
     context "with failed creation" do

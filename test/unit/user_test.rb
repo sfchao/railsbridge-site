@@ -28,6 +28,28 @@ class UserTest < ActiveSupport::TestCase
     end
   end
   
+  context "#full_name" do
+    should "concatenate first and last name" do
+      user = User.generate(:first_name => "Betty", :last_name => "Boop")
+      assert_equal "Betty Boop", user.full_name
+    end
+    
+    should "handle blank last name" do
+      user = User.generate(:first_name => "Betty", :last_name => nil)
+      assert_equal "Betty", user.full_name
+    end
+
+    should "handle blank first name" do
+      user = User.generate(:first_name => nil, :last_name => "Boop")
+      assert_equal "Boop", user.full_name
+    end
+
+    should "handle missing names" do
+      user = User.generate(:first_name => nil, :last_name => nil)
+      assert_equal "", user.full_name
+    end
+  end
+  
 end
 
 
