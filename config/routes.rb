@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resource :account, :controller => "users"
+  map.resources :documents
   map.resources :news_items, :collection => { :feed => :get }
   map.resources :password_resets
   map.resources :projects

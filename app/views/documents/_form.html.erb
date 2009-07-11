@@ -1,0 +1,23 @@
+<div id="fullWidthContainer">
+
+  <% form_for(@document, :live_validations => true, :html => { :multipart => true }) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :description %><br />
+      <%= f.text_field :description %>
+    </p>
+    <p>
+      <%= f.label :download %><br />
+      <%= f.file_field :download %>
+    </p>
+    <p>
+      <%= f.submit 'Update' %>
+    </p>
+  <% end %>
+
+</div>
