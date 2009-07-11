@@ -9,7 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090629190006) do
+ActiveRecord::Schema.define(:version => 20090711131502) do
+
+  create_table "documents", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "user_id"
+    t.string   "download_file_name"
+    t.string   "download_content_type"
+    t.integer  "download_size"
+    t.datetime "download_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "news_items", :force => true do |t|
     t.string   "headline"
@@ -29,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20090629190006) do
     t.string   "site_image_file_name"
     t.string   "site_image_content_type"
     t.integer  "site_image_size"
-    t.datetime "site_image_updated_ad"
+    t.datetime "site_image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
