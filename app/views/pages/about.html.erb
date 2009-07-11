@@ -20,4 +20,16 @@
     <li>Michael Breen</li>
     <li>Eric Davis</li>
   </ul>
+  
+  <h1>Important Documents</h1>
+  <% @documents.each do |document| %>
+  <div class="document">
+	<p>
+	<%= link_to "Download", document.download.url %> 
+	<strong><%= h document.name %></strong>
+  
+      <%=h document.description %>
+	</p>
+  </div>
+  <% end %>
 </div>
