@@ -266,6 +266,7 @@ ul#topNav li a:hover {
 .contentBox {
 	margin-bottom: 25px;
 	float: left;
+	width: 503px;
 }
 
 .contentBox img {
@@ -322,6 +323,11 @@ ul#topNav li a:hover {
 
 .subTitleLink a {
 	color: #006699;
+}
+
+.twitterBird {
+	background: transparent url(../images/twitterBird.png) no-repeat right 4px;
+	width: 503px;
 }
 
 input.subscribe {
