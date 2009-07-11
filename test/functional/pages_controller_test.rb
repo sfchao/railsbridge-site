@@ -5,7 +5,8 @@ class PagesControllerTest < ActionController::TestCase
   {:css_test => 'CSS Test',
    :mission => 'The RailsBridge Mission',
    :help => 'Get Involved',
-   :about => 'About RailsBridge'}.each do | page, page_title |
+   :about => 'About RailsBridge',
+   :sponsors => "RailBridge's Sponsors"}.each do | page, page_title |
     context "on GET to :#{page.to_s}" do
       setup do
         get page
