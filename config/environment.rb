@@ -11,7 +11,7 @@ Rails::Initializer.run do |config|
   config.gem 'jscruggs-metric_fu', :lib => 'metric_fu', :source => 'http://gems.github.com', :version => '~> 1.1'
   config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com', :version => '~> 2.2'
   config.gem 'authlogic', :version => '~> 2.0'
-  config.gem 'image_science', :version => '~> 1.2'
+#  config.gem 'image_science', :version => '~> 1.2'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
