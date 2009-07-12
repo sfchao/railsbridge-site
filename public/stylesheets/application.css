@@ -406,41 +406,40 @@ input.subscribeButton {
 	width: 100%;
 }
 
+#twitterList ul {
+	
+}
+
 #twitterList li {
 	float: none;
 	width: 100%;
-	margin: 0 40px 0 20px;
+	margin: 0 0 8px;
+	border-bottom: 1px dotted #b3b3b3;
+	padding-bottom: 4px;
+}
+
+#twitterList li:last-child {
+	margin: 0;
+	border-bottom-style: none;
 }
 
 #twitterList small {
 	font-weight: bold;
-}
-/*
-li {
-	border-top-style: dotted;
-	border-top-width: 1px;
+	display: block;
 }
 
-li:first-child {
-	border-top-style: none;
+#twitterList small a {
+	color: #999;
+	text-decoration: none;
 }
 
-.list {
-	width: 250px;
-	color: white;
-	margin-bottom: 20px;
-	margin-right: 20px;
-	float: left;
-	padding: 10px;
+#twitterList small a:hover {
+	text-decoration: underline;
 }
-
-.list h1 {
-	font-size: 18px;
-}
-*/
 
 .twitterBird {
-	background: transparent url(../images/twitterBird.png) no-repeat 150px 4px;
+	background: transparent url(../images/twitterBird.png) no-repeat left 4px;
+	padding-left: 40px;
 }
 
 /* @end */
