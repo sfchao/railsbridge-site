@@ -216,7 +216,7 @@ ul#topNav li a:hover {
 }
 
 #contentWrapper {
-	min-height: 700px;
+	min-height: 550px;
 	background-color: #FFF;
 	padding: 20px 25px 25px;
 	width: 910px;
@@ -359,6 +359,62 @@ input.subscribeButton {
 	float: left;
 	display: block;
 	width: 455px;
+	margin-bottom: 20px;
+}
+
+.projectDetails {
+	float: left;
+	display: block;
+	width: 300px;
+	margin: 0 20px 20px 0;
+}
+
+.imgHolder {
+	float: left;
+	width: 260px;
+	height: 163px;
+	display: block;
+	position: relative;
+	margin-right: 20px;
+}
+
+.imgHolder img {
+	border: 1px solid #666;
+}
+
+.projectContent {
+	width: 175px;
+	float: left;
+}
+
+#projectLongDescription {
+	float: left;
+	width: 569px;
+	border-left: 1px solid #b3b3b3;
+	padding-left: 20px;
+}
+
+.projectLinks {
+    height: 15px;
+    font: 0.833em 'Lucida Grande', Verdana;
+    line-height: 15px;
+    white-space: nowrap;
+    bottom: 0px;
+    color: #BE0726;
+}
+        
+.projectLinks a {
+	background-color: #BE0726;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    color: #fff;
+    text-decoration: none;
+    padding: 0px 5px;
+}
+
+.projectLinks a:hover {
+	background-color: #800219;
 }
 
 /* @end */
