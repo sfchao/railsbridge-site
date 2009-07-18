@@ -29,7 +29,7 @@
 
   <div class="contentBox">
   	<div class="subTitleHolder">
-  		<div class="subTitle"><h2><strong>Featured</strong> Projects</h2></div><div class="subTitleLink"><%= link_to "View all Projects &raquo;", projects_path %></div>
+  		<div class="subTitle"><h2><strong>RailsBridge</strong> Projects</h2></div><div class="subTitleLink"><%= link_to "View all Projects &raquo;", projects_path %></div>
   	</div>
   	<ul>
   	  <% @projects[0..2].each_with_index do |project, i| %>
@@ -47,7 +47,7 @@
 
   <div class="contentBox">
   	<div class="subTitleHolder">
-  		<div class="subTitle"><h2>A Network of <strong>Rails-Focused Efforts</strong> for the <strong>greater good</strong></h2></div>
+  		<div class="subTitle"><h2>Choose a project and <strong><%= link_to "Get Involved", help_path %></h2></div>
   	</div>
   	<ul>
   	  <% @projects[3..5].each_with_index do |project, i| %>
