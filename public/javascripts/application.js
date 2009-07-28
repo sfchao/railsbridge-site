@@ -1,5 +1,14 @@
 // Toggle the RailsBridge Toolbar in an unobtrusive way
-Event.observe(window, 'load', function() { init() });
+Event.observe(window, 'load', function() { 
+	init() 
+	$$('a[rel="external"]').each(function(link)
+    {
+        if(link.readAttribute('href') != '' & link.readAttribute('href') != '#')
+        {
+            link.writeAttribute('target','_blank');
+        }
+    });
+});
 function init(){
 	$('menuTrigger').observe('click', function() {
 		triggerEffect(this,'toolbarContainer','slide', '/images/rbnDownButton.png', '/images/rbnUpButton.png');
@@ -18,7 +27,7 @@ function triggerEffect(srcElement,divId, effect, firstImg, secondImg){
 
 // Modification from original http://twitter.com/javascripts/blogger.js
 // Just a quick fix to clean up the code, make html validate, some ajax to add a loader in case Twitter is slow
-// and then apear once it loads.
+// and then appear once it loads.
 function twitterCallback2(twitters) {
   var statusHTML = [];
   for (var i=0; i<twitters.length; i++){
