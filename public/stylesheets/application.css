@@ -116,6 +116,12 @@ strong {
 	font-weight: bold;
 }
 
+label {
+	font-weight: bold;
+	margin-bottom: 5px;
+	display: block;
+}
+
 hr {
   background: #DDDDDD; 
   color: #DDDDDD;
@@ -382,6 +388,29 @@ input.subscribeButton {
 	display: inline-block;
 	position: relative;
 }
+
+#paypal {
+	width: 191px;
+	float: left;
+	display: block;
+	margin-right: 20px;
+	border-right: 1px solid #DDDDDD;
+}
+
+#badge {
+	width: 160;
+	float: left;
+	display: block;
+}
+
+#badge h3 {
+	margin: 0 0 0 5px;
+}
+
+#badge p {
+	margin: 0 0 10px 5px;
+}
+
 
 /* @group Projects */
 
