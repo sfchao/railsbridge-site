@@ -54,6 +54,7 @@ h1 {
 	font-size: 2em;
 	line-height: 1;
 	margin-bottom: 0.5em;
+	color: #B60A27;
 }
 
 h2 {
@@ -126,6 +127,31 @@ hr {
   border: none; 
 }
 
+/* Lists
+-------------------------------------------------------------- */
+
+li ul, 
+li ol {
+	margin: 0 1.5em;
+}
+
+ul, ol {
+	margin: 0 1.5em 1.5em 1.5em;
+}
+
+ul {
+	list-style-type: none;
+}
+
+ul li {
+	list-style-image: url(../images/ruby_gem.png);
+	list-style-position: inside;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
 .LV_validation_message {
 	font-weight: bold;
 	margin-left: 5px;	
@@ -196,6 +222,7 @@ ul#topNav {
 	float: left;
 	list-style-type: none;
 	padding-left: 70px;
+	margin: 0;
 }
 
 ul#topNav li {
@@ -204,6 +231,8 @@ ul#topNav li {
 	font-size: 1.8em;
 	margin-right: 25px;
 	margin-top: 2px;
+	list-style-image: none;
+	margin-bottom: 0;
 }
 
 ul#topNav li a {
@@ -286,14 +315,15 @@ ul#topNav li a:hover {
 }
 
 .contentBox ul {
-	margin-top: 10px;
 	list-style-type: none;
+	margin: 10px 0 0;
 }
 
 .contentBox li {
 	float: left;
 	width: 140px;
 	margin: 0 40px 0 0;
+	list-style-image: none;
 }
 
 .contentBox li.last {
@@ -516,10 +546,15 @@ input.subscribeButton {
 	font-size: 0.95em;
 	padding-top: 12px;
 	margin: 0;
+	font-weight: bold;
 }
 
 #footer a {
 	color: #FFF;
+}
+
+.strong {
+	font-weight: bold;
 }
 
 .right {
