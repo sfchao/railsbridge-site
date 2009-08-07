@@ -11,10 +11,9 @@ var post_url = window.location;
 
 $.ajax({
   dataType: 'jsonp',
-  data: {'rails_ver': rails_ver, 'module' : module},
-  jsonp: 'jsonp_callback',
-  url: 'http://localhost:3000/javascripts/elad.json',
+  data: "title=" + title + "&permlink=" + post_url,
+  url: 'http://localhost:3000/post_authorities/get_auth.json',
   success: function (data) {
-    alert(data.authority)
+	document.write("This post is: " + data.authority + ". <a href='http://railsbridge.org'>RailsBridge</a>");
   }
 });

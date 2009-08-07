@@ -3,7 +3,7 @@ class CreatePostAuthorities < ActiveRecord::Migration
     create_table :post_authorities do |t|
       t.string :title
       t.string :permlink
-      t.integer :status
+      t.integer :status, :default => 0
 
       t.timestamps
     end

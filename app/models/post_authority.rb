@@ -4,4 +4,14 @@ class PostAuthority < ActiveRecord::Base
   attr_accessible :title, :permlink
   validates_uniqueness_of :permlink
   
+  STATUS_CODES = {"0" => 'Pending Approval', "1" => "Up to date", "2" => "Out of date"}
+  STATUS_TOKENS = {"0" => 'pending', "1" => "valid", "2" => "expired"}
+  
+  def current_status
+    STATUS_CODES[self.status.to_s]
+  end
+  
+  def current_token
+    STATUS_TOKENS[self.status.to_s]
+  end
 end

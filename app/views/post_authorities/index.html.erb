@@ -1,0 +1,26 @@
+<h1>Post Authorities</h1>
+<% if @posts.blank? -%>
+<p>
+	No posts here!
+</p>
+<% else -%>
+	<p>
+		Select all
+		<select id="status_token_select">
+			<%= options_for_select(PostAuthority::STATUS_CODES.to_a.collect(&:reverse))%>
+		</select>
+		<button id="apply_token_filter">Select</button>
+	</p>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col" style="width:30px;">&nbsp;</th>
+				<th scope="col">Title</th>
+				<th scope="col">Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render :partial => 'post', :collection => @posts %>
+		</tbody>
+	</table>
+<% end -%>

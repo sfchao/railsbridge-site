@@ -7,9 +7,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :projects
   map.resources :users
   map.resource :user_session
+  map.resources :post_authorities, :controller => 'post_authorities', :collection => {:get_auth => :any}
 
   map.root :controller => "pages", :action => "home"
-
+  
   map.mission 'mission', :controller => "pages", :action => "mission"
   map.home 'home', :controller => "pages", :action => "home"
   map.about 'about', :controller => "pages", :action => "about"

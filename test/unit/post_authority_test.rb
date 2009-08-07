@@ -12,6 +12,10 @@ class PostAuthorityTest < ActiveSupport::TestCase
       @post = PostAuthority.generate!
     }
     should_validate_uniqueness_of :permlink
+    
+    should "have a 'pending approval' (0) status" do
+      assert @post.status.zero?
+    end
   end
   
 end
