@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  
+
   def home
     @page_title = 'RailsBridge'
     @projects = Project.all.shuffle
@@ -25,6 +25,10 @@ class PagesController < ApplicationController
   
   def sponsors
     @page_title = "RailBridge's Sponsors"
+  end
+  
+  def badge
+    @page_title = "RailBridge Badges"
   end
   
 end
