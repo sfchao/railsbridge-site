@@ -45,7 +45,7 @@ a img {
 /* Headings
 -------------------------------------------------------------- */
 
-h1,h2,h3 {
+h2,h3 {
 	font-weight: normal;
 	color: #333333;
 }
@@ -55,6 +55,7 @@ h1 {
 	line-height: 1;
 	margin-bottom: 0.5em;
 	color: #B60A27;
+	font-weight: bold;
 }
 
 h2 {
@@ -142,7 +143,7 @@ li ol {
 }
 
 ul, ol {
-	margin: 0 1.5em 1.5em 1.5em;
+	margin: 0 1.5em 1.5em 3em;
 }
 
 ul {
@@ -151,7 +152,7 @@ ul {
 
 ul li {
 	list-style-image: url(../images/ruby_gem.png);
-	list-style-position: inside;
+	list-style-position: outside;
 }
 
 ol {
@@ -260,39 +261,44 @@ ul#topNav li a:hover {
 	clear: both;
 }
 
-#leftContainer {
+#homeLeftContainer {
 	width: 382px;
 	min-height: 400px;
 	float: left;
 	margin-right: 25px;
 }
 
-#leftContainer span.date {
+#homeLeftContainer span.date {
 	font-size: 0.6em;
 	display: block;
 	color: #666;
 	text-decoration: none;
 }
 
-#leftContainer h3 {
+#homeLeftContainer h3 {
 	margin: 0;
 	font-weight: bold;
 }
 
-#leftContainer a.blue {
+#homeLeftContainer a.blue {
 	color: #006699;
 }
 
-.redMarking {
- 	color: #B60A27;
-}
-
-.highlight {
-	font-weight: bold;
-	background-color: #FFFFCC;
+#leftContainer {
+	width: 500px;
+	min-height: 400px;
+	float: left;
+	margin-right: 25px;
 }
 
 #rightContainer {
+	width: 360px;
+	background-color: #e6e6e6;
+	padding: 12px;
+	float: right;
+}
+
+#homeRightContainer {
 	width: 503px;
 	min-height: 400px;
 	float: right;
@@ -383,6 +389,15 @@ input.subscribeButton {
 	top: 3px;
 }
 
+.redMarking {
+ 	color: #B60A27;
+}
+
+.highlight {
+	font-weight: bold;
+	background-color: #FFFFCC;
+}
+
 #fullWidthContainer {
 	width: 910px;
 	display: inline-block;
@@ -410,7 +425,6 @@ input.subscribeButton {
 #badge p {
 	margin: 0 0 10px 5px;
 }
-
 
 /* @group Projects */
 
