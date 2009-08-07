@@ -1,28 +1,59 @@
-// Toggle the RailsBridge Toolbar in an unobtrusive way
-Event.observe(window, 'load', function() { 
-	init() 
-	$$('a[rel="external"]').each(function(link)
-    {
-        if(link.readAttribute('href') != '' & link.readAttribute('href') != '#')
-        {
-            link.writeAttribute('target','_blank');
-        }
-    });
+$(document).ready(function(){
+	initMenu();
+	setupExternalLinks();
+	setupPostsFilter();
 });
-function init(){
-	$('menuTrigger').observe('click', function() {
+
+function initMenu(){
+	$('#menuTrigger').click(function() {
 		triggerEffect(this,'toolbarContainer','slide', '/images/rbnDownButton.png', '/images/rbnUpButton.png');
 	});
 }
+
+function setupExternalLinks(){
+	
+	$('a[rel="external"]').each(function(link) {
+        if(link.attr('href') != '' & link.attr('href') != '#')
+        {
+            link.attr('target','_blank');
+        }
+    });
+}
+
+// Toggle the RailsBridge Toolbar in an unobtrusive way
+// Event.observe(window, 'load', function() { 
+// 	init() 
+// 	$$('a[rel="external"]').each(function(link)
+//     {
+//         if(link.readAttribute('href') != '' & link.readAttribute('href') != '#')
+//         {
+//             link.writeAttribute('target','_blank');
+//         }
+//     });
+// });
+
+// function init(){
+// 	$('menuTrigger').observe('click', function() {
+// 		triggerEffect(this,'toolbarContainer','slide', '/images/rbnDownButton.png', '/images/rbnUpButton.png');
+// 	});
+// }
+
 function triggerEffect(srcElement,divId, effect, firstImg, secondImg){
-  Effect.toggle(divId, effect, {
-    beforeStart:function(){
-      image = srcElement.getElementsByTagName('img')[0];
-      image.src = image.src.match(firstImg) ? secondImg : firstImg;
-    },
-	duration:0.2
+  
+  $("#" + divId).slideToggle("normal", function(){
+	image = srcElement.getElementsByTagName('img')[0];
+	var new_image = $(image).attr("src").match(firstImg) ? secondImg : firstImg;
+    $(image).attr("src", new_image); 
   });
   return false;
+  // Effect.toggle(divId, effect, {
+  //    beforeStart:function(){
+  //      image = srcElement.getElementsByTagName('img')[0];
+  //      image.src = image.src.match(firstImg) ? secondImg : firstImg;
+  //    },
+  // 	duration:0.2
+  //  });
+  //  return false;
 }
 
 // Modification from original http://twitter.com/javascripts/blogger.js
@@ -67,4 +98,12 @@ function relative_time(time_value) {
     } else {
         return (parseInt(delta / 86400)).toString() + ' days ago';
     }
+}
+
+
+
+function setupPostsFilter(){
+	if ($("#status_token_select")) {
+	//	alert('select');
+	}
 }
