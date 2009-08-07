@@ -7,9 +7,10 @@
 	<p>
 		Select all
 		<select id="status_token_select">
-			<%= options_for_select(PostAuthority::STATUS_CODES.to_a.collect(&:reverse))%>
+			<%= options_for_select(PostAuthority::STATUS_TOKENS.to_a.collect(&:reverse))%>
 		</select>
 		<button id="apply_token_filter">Select</button>
+		<button id="clear_token_filter">Clear</button>
 	</p>
 	<table>
 		<thead>

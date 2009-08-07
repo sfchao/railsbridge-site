@@ -104,6 +104,24 @@ function relative_time(time_value) {
 
 function setupPostsFilter(){
 	if ($("#status_token_select")) {
-	//	alert('select');
+		$("#clear_token_filter").click(function(){
+			clearCheckBoxes();
+		});
+		
+		$("#apply_token_filter").click(function(){
+			var selected_token = $("#status_token_select :selected").text();
+			
+			clearCheckBoxes();
+			$("INPUT[@type=checkbox].post_" + selected_token).each(function(){
+				$(this).attr("checked",true);
+			});
+		});
 	}
+}
+
+function clearCheckBoxes(){
+	$("INPUT[@type=checkbox]").each(function(){
+		$(this).attr("checked", false);
+	});
+	return true;
 }
