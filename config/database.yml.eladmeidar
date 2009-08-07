@@ -4,3 +4,10 @@ development:
   username: root
   password:
   encoding: utf8
+  
+test:
+  adapter: mysql
+  database: railsbridge_site_test
+  username: root
+  password:
+  encoding: utf8
