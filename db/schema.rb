@@ -34,7 +34,9 @@ ActiveRecord::Schema.define(:version => 20090807164358) do
   create_table "post_authorities", :force => true do |t|
     t.string   "title"
     t.string   "permlink"
-    t.integer  "status",     :default => 0
+    t.string   "rails_version"
+    t.string   "reference_module"
+    t.integer  "status",           :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

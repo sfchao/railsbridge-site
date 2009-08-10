@@ -1,0 +1,56 @@
+#actions_dashboard {
+	background:#FC6;
+	padding:5px;
+	padding-left:10px;
+}
+#actions_dashboard a:link {
+	text-decoration:underline;
+	padding:4px;
+}
+a:link.active_select,a:visited.active_select {
+	background:#F93;
+}
+
+#actions_dashboard a:hover {
+	text-decoration:underline;
+}
+
+table {
+	margin:0px;
+	font-size:1.1em;
+	width:910px;
+}
+
+table thead {
+	font-size:1.2em;
+}
+
+table thead th {
+	text-align:center;
+	padding:3px;
+	padding-left:6px;
+	background:#FF9;
+	border-bottom:1px solid #F93;
+	font-weight:bold;
+	width:200px;
+}
+
+table thead th.wide {
+	width:auto;
+	text-align:left;
+}
+
+table td {
+	text-align:center;
+	padding:3px;
+	border-bottom:1px solid #F93;
+}
+
+table td.post_title {
+	text-align:left;
+}
+
+table td input {
+	padding:0px;
+	vertical-align:bottom;
+}

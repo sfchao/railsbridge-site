@@ -11,7 +11,7 @@ var post_url = window.location;
 
 $.ajax({
   dataType: 'jsonp',
-  data: "title=" + title + "&permlink=" + post_url,
+  data: "title=" + title + "&permlink=" + post_url + "&rails_ver=" + rails_ver + "&module=" + module,
   url: 'http://localhost:3000/post_authorities/get_auth.json',
   success: function (data) {
 	document.write("This post is: " + data.authority + ". <a href='http://railsbridge.org'>RailsBridge</a>");

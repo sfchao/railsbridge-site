@@ -1,22 +1,28 @@
+<% content_for(:head) do %>
+	<%= stylesheet_link_tag 'post_authorities'%>
+<% end %>
 <h1>Post Authorities</h1>
 <% if @posts.blank? -%>
 <p>
 	No posts here!
 </p>
 <% else -%>
-	<p>
-		Select all
-		<select id="status_token_select">
-			<%= options_for_select(PostAuthority::STATUS_TOKENS.to_a.collect(&:reverse))%>
+	<div id="actions_dashboard">
+		<span>Select:</span>&nbsp;<a href="#" id="select_all_pending" class="select_all">Pending</a>, 
+		<a href="#" id="select_all_expired" class="select_all">Expired</a>,
+		<a href="#" id="select_all_valid" class="select_all">Valid</a> |
+		<span>Filter:</span>
+		<select id="filter_post_authorities">
+			<%= options_for_select PostAuthority.status_tokens_for_select %>
 		</select>
-		<button id="apply_token_filter">Select</button>
-		<button id="clear_token_filter">Clear</button>
-	</p>
-	<table>
+	</div>
+	<table cellspacing="0">
 		<thead>
 			<tr>
 				<th scope="col" style="width:30px;">&nbsp;</th>
-				<th scope="col">Title</th>
+				<th scope="col" class="wide">Title</th>
+				<th scope="col">Rails Version</th>
+				<th scope="col">Module</th>
 				<th scope="col">Status</th>
 			</tr>
 		</thead>
