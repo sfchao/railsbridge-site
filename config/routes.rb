@@ -15,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
   map.home 'home', :controller => "pages", :action => "home"
   map.about 'about', :controller => "pages", :action => "about"
   map.sponsors 'sponsors', :controller => 'pages', :action => 'sponsors'
+  map.posts 'posts', :controller => 'posts', :action => 'posts'
   map.help 'help', :controller => "pages", :action => "help"
   map.badge 'badge', :controller => "pages", :action => "badge"
   map.login 'login', :controller => "user_sessions", :action => "new"

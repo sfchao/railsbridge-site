@@ -1,0 +1,27 @@
+<div id="leftContainer">
+  <h1>RailsBridge Post Authority Widget</h1>
+
+  <p>
+	Mike, your verbs skills are required here :), just to tell people what is that post authority thing.
+  </p>
+  <h2><strong>Get the Widget:</strong></h2>
+  <p>First, copy those 2 <code>script</code> tags and place them anywhere on your blog post,
+	if it's possible place them in a matter that they will be displayed only when a single post is displayed, rather than your full post feed.
+	</p>
+  <textarea style="width:500px;height:150px;">
+<div id="rb_auth_container">
+  <script>
+    var rails_ver = '1.2.3';
+    var module = 'ActiveRecord';
+  </script>
+  <script src="http://railsbridge.org/javascripts/railsbridge-post-authority.js"></script>
+</div>
+  </textarea>
+	<p>
+		The first script is optional, and will help RailsBridge to determine the subject of your post, you can edit the parameters to match your content's relevancy.
+	</p>
+	<ul>
+		<li><strong>rails_ver:</strong> set this to the rails version relevant to your content, (1.2.6, 2.x,...).</li>
+		<li><strong>module:</strong> comma separated values containing the subject of your post ("ActiveRecord", "Named_scope, associations, sql").</li>
+	</ul>
+</div>

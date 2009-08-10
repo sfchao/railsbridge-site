@@ -24,11 +24,15 @@ class PagesController < ApplicationController
   end
   
   def sponsors
-    @page_title = "RailBridge's Sponsors"
+    @page_title = "RailsBridge's Sponsors"
+  end
+  
+  def posts
+    @page_title = "RailsBridges Post Authority Widget"
   end
   
   def badge
-    @page_title = "RailBridge Badges"
+    @page_title = "RailsBridge Badges"
   end
   
 end
