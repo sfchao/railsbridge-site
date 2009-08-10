@@ -1,5 +1,5 @@
 #actions_dashboard {
-	background:#FC6;
+	background:#9CF;
 	padding:5px;
 	padding-left:10px;
 }
@@ -8,7 +8,8 @@
 	padding:4px;
 }
 a:link.active_select,a:visited.active_select {
-	background:#F93;
+	background:#006;
+	color:white;
 }
 
 #actions_dashboard a:hover {
@@ -29,8 +30,8 @@ table thead th {
 	text-align:center;
 	padding:3px;
 	padding-left:6px;
-	background:#FF9;
-	border-bottom:1px solid #F93;
+	background:#CFF;
+	border-bottom:3px solid #36F;
 	font-weight:bold;
 	width:200px;
 }
@@ -49,7 +50,17 @@ table td {
 table td.post_title {
 	text-align:left;
 }
+table tr.pending {
+	background:#FF9;
+}
 
+table tr.expired {
+	background:#F99;
+}
+
+table tr.valid {
+	background:#CF9;
+}
 table td input {
 	padding:0px;
 	vertical-align:bottom;

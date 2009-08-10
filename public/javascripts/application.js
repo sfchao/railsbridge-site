@@ -104,23 +104,22 @@ function relative_time(time_value) {
 
 function setupPostsFilter(){
 	if ($(".select_all")) {
-		//$("clear_token_filter").click(function(){
-		//	clearCheckBoxes();
-		// });
+
+		$(".select_all").click(function(){
 		
-		//
-		
-		$("a.select_all").click(function(){
-			
-			$(".select_all").removeClass("active_select");
-			$(this).addClass('active_select');
-			
 			var selected_token = this.id.split('_')[2]; //$("#status_token_select :selected").text();
 			
 			clearCheckBoxes();
+			$(this).addClass('active_select');
 			$("INPUT[@type=checkbox].post_" + selected_token).each(function(){
 				$(this).attr("checked",true);
 			});
+		});
+	}
+	
+	if ($('#select_none')) {
+		$("#select_none").click(function(){
+			clearCheckBoxes();
 		});
 	}
 }

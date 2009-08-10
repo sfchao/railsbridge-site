@@ -18,7 +18,11 @@
 			<%= f.text_field :reference_module %>
 		</p>
 		<p>
-			<%= f.submit 'Save'%>
+			<%= f.label 'status'%><br/>
+			<%= f.select :status, PostAuthority.status_tokens_for_key_select%>
+		</p>
+		<p>
+			<%= f.submit 'Save'%> | <%= link_to 'Back', post_authorities_url %>
 		</p>
 	</fieldset>
 	<h2>Preview</h2>

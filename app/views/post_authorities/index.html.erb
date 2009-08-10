@@ -10,11 +10,12 @@
 	<div id="actions_dashboard">
 		<span>Select:</span>&nbsp;<a href="#" id="select_all_pending" class="select_all">Pending</a>, 
 		<a href="#" id="select_all_expired" class="select_all">Expired</a>,
-		<a href="#" id="select_all_valid" class="select_all">Valid</a> |
-		<span>Filter:</span>
+		<a href="#" id="select_all_valid" class="select_all">Valid</a>,
+		<a href="#" id="select_none">None</a> | <%= will_paginate @posts %>
+		<!--span>Filter:</span>
 		<select id="filter_post_authorities">
-			<%= options_for_select PostAuthority.status_tokens_for_select %>
-		</select>
+			<%#= options_for_select PostAuthority.status_tokens_for_value_select %>
+		</select-->
 	</div>
 	<table cellspacing="0">
 		<thead>
