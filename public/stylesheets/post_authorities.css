@@ -36,7 +36,7 @@ table thead th {
 }
 
 table thead th.wide {
-	width:auto;
+	width:600px;
 	text-align:left;
 }
 
@@ -53,4 +53,10 @@ table td.post_title {
 table td input {
 	padding:0px;
 	vertical-align:bottom;
+}
+
+iframe {
+	width:910px;
+	height:300px;
+	border:1px solid black;
 }

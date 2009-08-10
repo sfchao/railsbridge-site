@@ -23,11 +23,26 @@ class PostAuthoritiesController < ApplicationController
   
   def edit
     begin
-      @post = Post.find(params[:id])
+      @post = PostAuthority.find(params[:id])
     rescue
       flash[:error] = "Unable to find that post"
       redirect_to post_authorities_url
     end
   end
-
+  
+  def update
+    begin
+      @post = PostAuthority.find(params[:post_authority][:id])
+      if @post.update_attributes(params[:post_authority])
+        flash[:notice] = "Post successfully updated"
+        redirect_to post_authorities_url
+      else
+        flash[:error] = "Errors were found during saving"
+        render :action => 'edit'
+      end
+    rescue
+      flash[:error] = "Unable to update post"
+      redirect_to post_authorities_url
+    end
+  end
 end

@@ -1,2 +1,26 @@
-<h1>PostAuthorities#edit</h1>
-<p>Find me in app/views/post_authorities/edit.html.erb</p>
+<% content_for(:head) do %>
+	<%= stylesheet_link_tag 'post_authorities'%>
+<% end %>
+<h1>Edit Post</h1>
+<% form_for @post do |f| %>
+	<fieldset>
+		<%= f.hidden_field :id %>
+		<p>
+			<%= f.label 'title'%><br/>
+			<%= f.text_field :title %>
+		</p>
+		<p>
+			<%= f.label 'rails_version'%><br/>
+			<%= f.text_field :rails_version %>
+		</p>
+		<p>
+			<%= f.label 'reference_module', 'Reference'%><br/>
+			<%= f.text_field :reference_module %>
+		</p>
+		<p>
+			<%= f.submit 'Save'%>
+		</p>
+	</fieldset>
+	<h2>Preview</h2>
+	<iframe src="<%= @post.permlink %>"></iframe>
+<% end %>
