@@ -16,6 +16,16 @@ class PostAuthorityTest < ActiveSupport::TestCase
     should "have a 'pending approval' (0) status" do
       assert @post.status.zero?
     end
+    
+    context "with no link" do
+      setup {
+        @post = PostAuthority.generate!(:permalink => nil)
+      }
+      
+      should "not be saved" do
+        assert !@post.save
+      end
+    end
   end
   
 end

@@ -1,22 +1,22 @@
 class PostAuthoritiesController < ApplicationController
   
- # before_filter :require_team_lead_user, :except => [ :create, :process ]
+  before_filter :require_team_lead_user, :except => [ :get_auth ]
   
   def index
     @posts = PostAuthority.paginate(:per_page => 50, :page => params[:page] || 1)
   end
   
   def get_auth
-    logger.info "params: #{params.inspect}"
+    
     @post = PostAuthority.find_by_permlink(params[:permlink])
-    if @post.blank?
-      if @post = PostAuthority.create({:title => params[:title], :permlink => params[:permlink], :rails_version => params[:rails_ver], :reference_module => params[:module]})
-        render :json => {'authority' => @post.current_status}, :callback => params[:callback]  
+    if @new_post.blank?
+      if @new_post = PostAuthority.create({:title => params[:title], :permlink => params[:permlink], :rails_version => params[:rails_ver], :reference_module => params[:module]})
+        render :json => {'authority' => @new_post.current_status}, :callback => params[:callback]  
       else
         render :status => 500, :head => 500
       end
     else
-      render :json => {'authority' => @post.current_status}, :callback => params[:callback]  
+      render :json => {'authority' => @new_post.current_status}, :callback => params[:callback]  
     end
     
   end
