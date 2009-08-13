@@ -1,5 +1,4 @@
 var RBAuthority = function(){
-	var BASE_URL = "http://localhost.com:3000"
 	var _P = {
 		init : function( params ) {
 			// load JQuery using Google AJAX libraries
@@ -10,8 +9,14 @@ var RBAuthority = function(){
 		},
 		loadCore : function() {
 			
+			if (typeof(debug) == "undefined" ) {
+				var url = "http://railsbridge.org/";
+			} else {
+				var url = "http://localhost:3000";
+			}
+			
 			// load core functions after JQuery was loaded.
-			document.write("<script src='" + BASE_URL + "/javascripts/railsbridge-post-authority-core.js'></script>");
+			document.write("<script src='" + url + "/javascripts/railsbridge-post-authority-core.js'></script>");
 		}
 	};
 	return {
