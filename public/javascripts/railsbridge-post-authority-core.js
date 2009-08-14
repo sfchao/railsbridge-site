@@ -10,7 +10,7 @@ var title = jQuery("title").text();
 var post_url = window.location;
 
 if (typeof(debug) == "undefined" ) {
-	var url = "http://railsbridge.org/";
+	var url = "http://railsbridge.org";
 } else {
 	var url = "http://localhost:3000";
 }
