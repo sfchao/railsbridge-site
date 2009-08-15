@@ -1,3 +1,5 @@
+jQuery.noConflict();
+
 if (typeof(rails_ver) == "undefined") {
 	var rails_ver = "unknown";
 }
