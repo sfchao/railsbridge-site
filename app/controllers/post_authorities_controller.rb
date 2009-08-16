@@ -9,14 +9,14 @@ class PostAuthoritiesController < ApplicationController
   def get_auth
     
     @post = PostAuthority.find_by_permlink(params[:permlink])
-    if @new_post.blank?
+    if @post.blank?
       if @new_post = PostAuthority.create({:title => params[:title], :permlink => params[:permlink], :rails_version => params[:rails_ver], :reference_module => params[:module]})
         render :json => {'authority' => @new_post.current_status}, :callback => params[:callback]  
       else
         render :status => 500, :head => 500
       end
     else
-      render :json => {'authority' => @new_post.current_status}, :callback => params[:callback]  
+      render :json => {'authority' => @post.current_status}, :callback => params[:callback]  
     end
     
   end
