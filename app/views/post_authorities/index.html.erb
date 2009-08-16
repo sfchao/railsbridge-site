@@ -1,5 +1,6 @@
 <% content_for(:head) do %>
 	<%= stylesheet_link_tag 'post_authorities'%>
+	<%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
 <% end %>
 <h1>Post Authorities</h1>
 <% if @posts.blank? -%>
@@ -7,11 +8,16 @@
 	No posts here!
 </p>
 <% else -%>
+	<%= will_paginate @posts%>
 	<div id="actions_dashboard">
 		<span>Select:</span>&nbsp;<a href="#" id="select_all_pending" class="select_all">Pending</a>, 
 		<a href="#" id="select_all_expired" class="select_all">Expired</a>,
 		<a href="#" id="select_all_valid" class="select_all">Valid</a>,
 		<a href="#" id="select_none">None</a> | <%= will_paginate @posts %>
+		<span>Change to</span>
+		<select id="change_post_authorities">
+			<%= options_for_select PostAuthority.status_tokens_for_value_select << ["Select:", -1], -1%>
+		</select>
 		<!--span>Filter:</span>
 		<select id="filter_post_authorities">
 			<%#= options_for_select PostAuthority.status_tokens_for_value_select %>

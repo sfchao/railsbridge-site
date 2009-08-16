@@ -14,7 +14,7 @@ var post_url = window.location;
 if (typeof(debug) == "undefined" ) {
 	var url = "http://railsbridge.org";
 } else {
-	var url = "http://localhost:3000";
+	var url = "http://railsbridge.dev";
 }
 jQuery.ajax({
   dataType: 'jsonp',

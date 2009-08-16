@@ -2,6 +2,14 @@ $(document).ready(function(){
 	initMenu();
 	setupExternalLinks();
 	setupPostsFilter();
+	setupPostStatusChanger();
+});
+
+$(document).ajaxSend(function(event, request, settings) {
+  if (typeof(AUTH_TOKEN) == "undefined") return;
+  // settings.data is a serialized string like "foo=bar&baz=boink" (or null)
+  settings.data = settings.data || "";
+  settings.data += (settings.data ? "&" : "") + "authenticity_token=" + encodeURIComponent(AUTH_TOKEN);
 });
 
 function initMenu(){
@@ -101,15 +109,66 @@ function relative_time(time_value) {
 }
 
 
+function setupPostStatusChanger(){
+	if ($("#change_post_authorities")) {
+		var statusTokens = {"pending":0, "valid":1, "expired": 2}
+		
+		
+		$("INPUT[@type=checkbox]").click(function(e){
+			$(".select_all").removeClass("active_select");
+			$("#change_post_authorities OPTION").removeAttr("disabled");
+			$("#change_post_authorities OPTION[@value=-1]").attr("disabled", true);
+			$("#change_post_authorities").val(-1);
+		});
+		
+		$("#change_post_authorities").change(function(e){
+			var selected_value = $(this).val();
+			
+			var post_ids = new Array;
+			// get all marked checkboxes
+			$("INPUT[@type=checkbox]:checked").each(function(){
+				post_ids.push(this.id.split('_')[1]);
+			});
+			
+			if(post_ids.length > 0) {
+				$.ajax({
+				  type: 'POST',
+				  dataType: 'json',
+				  data:{"new_status": selected_value, "posts": post_ids.join(',')},
+				  url: '/post_authorities/bulk_process.json',
+				  success: function (data) {
+					$("INPUT[@type=checkbox]:checked").each(function(){
+						var tr_parent = $(this).parents(2);
+						tr_parent.removeClass("valid");
+						tr_parent.removeClass("expired");
+						tr_parent.removeClass("pending");
+						tr_parent.addClass(data.new_status);
+						
+					});
+					// Update the status TD
+					for (index in post_ids) {
+						$("#post_" + post_ids[index] + "_status").text(data.new_status_string);
+					}
+				  }
+				});
+			} else {
+				// do something
+			}
+		});
+	}
+}
 
 function setupPostsFilter(){
 	if ($(".select_all")) {
-
+		var statusTokens = {"pending":0, "valid":1, "expired": 2}
 		$(".select_all").click(function(){
-		
+			
 			var selected_token = this.id.split('_')[2]; //$("#status_token_select :selected").text();
 			
 			clearCheckBoxes();
+			
+			$("#change_post_authorities OPTION[@value=" + statusTokens[selected_token] +"]").attr("disabled", true);
+			$("#change_post_authorities").val(statusTokens[selected_token]);
 			$(this).addClass('active_select');
 			$("INPUT[@type=checkbox].post_" + selected_token).each(function(){
 				$(this).attr("checked",true);
@@ -129,5 +188,8 @@ function clearCheckBoxes(){
 	$("INPUT[@type=checkbox]").each(function(){
 		$(this).attr("checked", false);
 	});
+	$("#change_post_authorities OPTION").removeAttr("disabled");
+	$("#change_post_authorities OPTION[@value=-1]").attr("disabled", true);
+	$("#change_post_authorities").val(-1);
 	return true;
 }

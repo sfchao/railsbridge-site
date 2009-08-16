@@ -7,16 +7,16 @@ var RBAuthority = function(){
 			
 			// This $ hack is to bypass possible collision of the $ sign with other libs
 			// since JQuery is loaded dynamically, noConflict() is futile.
-			document.write("<script> var oldLib = $; </script>");
+			document.write("<script> if (typeof($) != 'undefined') {var oldLib = $; var change_back = true;} </script>");
 			document.write("<script>google.load('jquery', '1.3.2');</script>");
-			document.write("<script> $ = oldLib; </script>");
+			document.write("<script> if (typeof(change_back) != 'undefined') {$ = oldLib;} </script>");
 		},
 		loadCore : function() {
 			
 			if (typeof(debug) == "undefined" ) {
 				var url = "http://railsbridge.org";
 			} else {
-				var url = "http://localhost:3000";
+				var url = "http://railsbridge.dev";
 			}
 			
 			// load core functions after JQuery was loaded.

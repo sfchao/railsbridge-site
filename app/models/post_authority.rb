@@ -16,7 +16,7 @@ class PostAuthority < ActiveRecord::Base
   end
   
   def self.status_tokens_for_value_select
-    STATUS_TOKENS.to_a.collect(&:reverse).collect {|pair| pair.first.titleize}
+    STATUS_TOKENS.to_a.collect(&:reverse).collect {|pair| [pair.first.titleize, pair.last]}
   end
   
   def self.status_tokens_for_key_select
