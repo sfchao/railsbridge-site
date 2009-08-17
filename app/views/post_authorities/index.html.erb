@@ -10,11 +10,12 @@
 <% else -%>
 	<%= will_paginate @posts%>
 	<div id="actions_dashboard">
-		<span>Select:</span>&nbsp;<a href="#" id="select_all_pending" class="select_all">Pending</a>, 
-		<a href="#" id="select_all_expired" class="select_all">Expired</a>,
-		<a href="#" id="select_all_valid" class="select_all">Valid</a>,
-		<a href="#" id="select_none">None</a> | <%= will_paginate @posts %>
-		<span>Change to</span>
+		<button id="delete_selected_posts">Delete Selected</button> | 
+		<a href="#" id="select_all_pending" class="select_all">All Pending</a>, 
+		<a href="#" id="select_all_expired" class="select_all">All Expired</a>,
+		<a href="#" id="select_all_valid" class="select_all">All Valid</a>,
+		<a href="#" id="select_none">None</a> | 
+		<span>Mark selected as&nbsp;</span>
 		<select id="change_post_authorities">
 			<%= options_for_select PostAuthority.status_tokens_for_value_select << ["Select:", -1], -1%>
 		</select>

@@ -41,6 +41,20 @@ class PostAuthoritiesController < ApplicationController
     end
   end
   
+  def bulk_destroy
+    if request.xhr?
+      post_ids = params[:posts].split(',').collect(&:to_i)
+      @posts = PostAuthority.find(post_ids)
+      @posts.each do |post|
+        post.destroy
+      end
+      
+      render :json => {"message" => "Great Success!"}, :status => 200
+    else
+      render :nothing => true, :status => 404
+    end
+  end
+  
   def edit
     begin
       @post = PostAuthority.find(params[:id])

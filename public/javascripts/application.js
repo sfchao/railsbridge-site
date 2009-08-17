@@ -3,6 +3,7 @@ $(document).ready(function(){
 	setupExternalLinks();
 	setupPostsFilter();
 	setupPostStatusChanger();
+	setupDeletePosts();
 });
 
 $(document).ajaxSend(function(event, request, settings) {
@@ -138,11 +139,19 @@ function setupPostStatusChanger(){
 				  url: '/post_authorities/bulk_process.json',
 				  success: function (data) {
 					$("INPUT[@type=checkbox]:checked").each(function(){
-						var tr_parent = $(this).parents(2);
+						var current_id = this.id.split('_')[1];
+						var tr_parent = $("#post_" + current_id + "_row")
+						
 						tr_parent.removeClass("valid");
 						tr_parent.removeClass("expired");
 						tr_parent.removeClass("pending");
+						
+						$(this).removeClass("post_valid");
+						$(this).removeClass("post_expired");
+						$(this).removeClass("post_pending");
+						
 						tr_parent.addClass(data.new_status);
+						$(this).addClass("post_" + data.new_status);
 						
 					});
 					// Update the status TD
@@ -158,6 +167,35 @@ function setupPostStatusChanger(){
 	}
 }
 
+function setupDeletePosts(){
+	if($('button#delete_selected_posts')) {
+		$('button#delete_selected_posts').click(function(e){
+			var post_ids = new Array;
+			$("INPUT[@type=checkbox]:checked").each(function(){
+				var current_id = this.id.split('_')[1];
+				post_ids.push(current_id);
+		//		
+			});
+			
+			if(post_ids.length > 0) {
+				$.ajax({
+				  type: 'POST',
+				  dataType: 'json',
+				  data:{"posts": post_ids.join(',')},
+				  url: '/post_authorities/bulk_destroy.json',
+				  success: function (data) {
+					$("INPUT[@type=checkbox]:checked").each(function(){
+						var current_id = this.id.split('_')[1];
+						$("#post_" + current_id + "_row").fadeOut();
+						$("#post_" + current_id + "_row").remove();
+						
+					});
+				  }
+				});
+			}
+		});
+	}
+}
 function setupPostsFilter(){
 	if ($(".select_all")) {
 		var statusTokens = {"pending":0, "valid":1, "expired": 2}

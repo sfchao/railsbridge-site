@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :projects
   map.resources :users
   map.resource :user_session
-  map.resources :post_authorities, :controller => 'post_authorities', :collection => {:bulk_process => :post, :get_auth => :any}
+  map.resources :post_authorities, :controller => 'post_authorities', :collection => {:bulk_destroy => :post, :bulk_process => :post, :get_auth => :any}
 
   map.root :controller => "pages", :action => "home"
   

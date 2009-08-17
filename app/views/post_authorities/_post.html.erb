@@ -1,4 +1,4 @@
-<tr class="<%= post.current_token %>">
+<tr class="<%= post.current_token %>" id="post_<%= post.id %>_row">
 	<td><input type="checkbox" class="post_<%= post.current_token %>" id="post_<%= post.id %>" name="post_ids[]" value="<%= post.id %>" />
 	<td class="post_title"><%= link_to h(post.title), post.permlink, {:target => "_blank"} %></td>
 	<td><%= post.rails_version %></td>
