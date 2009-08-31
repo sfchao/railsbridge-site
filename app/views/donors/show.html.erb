@@ -1,0 +1,19 @@
+<p>
+  <b>Name:</b>
+  <%=h @donor.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h mail_to(@donor.email, :encode => "javascript") %>
+</p>
+
+<p>
+  <b>Donation:</b>
+  <%=h @donor.donation %>
+</p>
+
+<% team_lead_only do %>
+<%= link_to 'Edit', edit_donor_path(@donor) %> |
+<% end %>
+<%= link_to 'Back', donors_path %>

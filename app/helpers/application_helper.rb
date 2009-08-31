@@ -50,6 +50,13 @@ module ApplicationHelper
     nil
   end
 
+  def name_and_email(donor)
+    if donor.email.present?
+      mail_to(donor.email, donor.name, :encode => "javascript")
+    else
+      donor.name
+    end
+  end
 private
 
 #  def role_only(rolename, &block)

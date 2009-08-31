@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090807164358) do
+ActiveRecord::Schema.define(:version => 20090831160834) do
 
   create_table "documents", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(:version => 20090807164358) do
     t.string   "download_content_type"
     t.integer  "download_size"
     t.datetime "download_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "donors", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "donation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

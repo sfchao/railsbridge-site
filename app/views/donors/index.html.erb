@@ -1,0 +1,22 @@
+<h1>RailsBridge Donors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Rank</th>
+	<th></th>
+  </tr>
+
+<% @donors.each do |donor| %>
+  <tr>
+    <td><%= name_and_email(donor) %></td>
+	<td><%= h donor.rank %></td>
+    <td><%= link_to 'Show', donor %>
+	<% team_lead_only do %>  | <%= link_to 'Edit', edit_donor_path(donor) %>  | <%= link_to 'Destroy', donor, :confirm => 'Are you sure?', :method => :delete %><% end %></td>
+  </tr>
+<% end %>
+</table>
+
+<% team_lead_only do %>
+<%= link_to 'New donor', new_donor_path %>
+<% end %>
