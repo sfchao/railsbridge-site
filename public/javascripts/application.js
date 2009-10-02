@@ -79,9 +79,9 @@ function twitterCallback2(twitters) {
     });
     statusHTML += '<li><span>'+status+'</span> <small><a href="http://twitter.com/'+username+'/statuses/'+twitters[i].id+'">'+relative_time(twitters[i].created_at)+'</a></small</li>';
   }
-  $('twitterList').innerHTML = '<ul>' + statusHTML + '</ul>';
-  $('twitterPreloader').hide();
-  $('twitterList').blindDown({ duration: 2 });
+  $('#twitterList').html('<ul>' + statusHTML + '</ul>');
+  $('#twitterPreloader').hide();
+  $('#twitterList').slideDown({ duration: 2 });
 }
 
 function relative_time(time_value) {
