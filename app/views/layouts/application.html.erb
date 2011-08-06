@@ -7,8 +7,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="container">
+    <div id="header">
+      <p class="title">RailsBridge</p>
+      <p class="subtitle">First, do no harm. Then, help where you can.</p>
+    </div>
+    <div id="content">    
+      <%= yield %>
+    </div>
 
-<%= yield %>
+     <div id='sidebar'> 
+        
+        <div class='feed'> 
+        </div> 
+        <div class='social'> 
+          <h2>Social links:</h2> 
+          <a href='http://delicious.com/post?url=http://railsbridge.org/&amp;title=' title='Bookmark on delicious.com'>
+            <%= image_tag("delicious.png", :alt => 'Bookmark on delicous.com') %>
+          </a> 
+          <a href='http://digg.com/submit?phase=2&amp;url=http://railsbridge.org/&amp;title=' title='Digg it!'> 
+            <%= image_tag("digg.png", :alt => 'Digg it!') %>
+          </a> 
+          <a href='http://reddit.com/submit?url=http://railsbridge.org/&amp;title=' title='Reddit!'> 
+            <%= image_tag("reddit.gif", :alt => 'Reddit!' ) %>
+          </a> 
+        </div> 
+      </div> 
 
+      <div id="footer">
+        <p>&copy;<%=Date.today.year%> RailsBridge, Inc.</p>
+      </div>
+  </div>
 </body>
 </html>
