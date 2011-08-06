@@ -1,4 +1,7 @@
 Railsbridge::Application.routes.draw do
+  
+  root :to => "home#detect", :as => 'detect'
+
   scope "/:locale" do
     root :to => "home#index"
   end
