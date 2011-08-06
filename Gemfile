@@ -5,10 +5,8 @@ gem 'rails', '3.1.0.rc5'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'haml'
 gem 'RedCloth'
-gem 'therubyracer-heroku'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,8 +29,14 @@ gem 'jquery-rails'
 #
 
 group :development, :test do
+  gem 'heroku'
+  gem 'sqlite3'
   gem 'cucumber-rails'
   gem 'rspec-rails'
   gem 'database_cleaner'
 end
 
+group :production do
+  gem 'therubyracer-heroku'
+  gem 'pg'
+end
