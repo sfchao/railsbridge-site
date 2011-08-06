@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  english: "English"
+  spanish: "Spanish"
   tagline: "First, do no harm. Then, help where you can."
   social: "Social links:"
   anyone_can_learn: "Anyone can learn to program."
@@ -12,3 +14,7 @@ en:
   bridge_the_gap_guideline: "Bridge the gap from aspiring developer to contributing community member, through mentoring, teaching, and writing."
   reach_out_guideline: "Reach out to individuals and groups who are underrepresented."
   collaborate_guideline: "Collaborate with other groups with similar goals."
+  railsbridge_projects: "RailsBridge Projects"
+  get_involved: "Get involved"
+  need_help: "To succeed, we need your help! Here's what you can do to be a part of the RailsBridge vision:"
+  join_list: "Join the mailing lists:"
