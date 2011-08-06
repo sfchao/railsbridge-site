@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # Sample localization file for Spanish. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
@@ -6,3 +7,9 @@ es:
   social: "Enlaces sociales:"
   anyone_can_learn: "Se puede aprender a programar."
   informal_mission: "Recursos de aprendizaje, mentores y talleres deben ser abiertamente disponibles para todos, sean principiantes totales o profesionales que quieran mejorarse."
+  railsbridge_workshops: "Talleres de RailsBridge"
+  link_to_workshop_info: "¿Buscas información sobre nuestros talleres? Visita nuestro sitio dedicado totalmente a <a href=\"http://workshops.railsbridge.org/\">los Talleres de RailsBridge</a>."
+  guidelines_title: "Las Pautas de RailsBridge"
+  bridge_the_gap_guideline: "Cierra la brecha para que un programador aspirante se haga miembro contribuyente de la comunidad, por consejos, la enseñanza, y la escritura."
+  reach_out_guideline: "Alcanza a individuos y grupos subrepresentados."
+  collaborate_guideline: "Colabora con otros grupos con metas similares."
