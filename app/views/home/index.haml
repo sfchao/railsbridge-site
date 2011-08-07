@@ -33,16 +33,16 @@
   * #{t :join_list}
     ** <a href='http://groups.google.com/group/railsbridge'>#{ t :english }</a>
     ** <a href='http://groups.google.com/group/railsbridge-espanol'>#{ t :spanish }</a>
-  * Hang with us in the #railsbridge IRC channel on <a href="http://freenode.net/">Freenode</a>
-  * Help out with a current project
-  * Propose new projects
-  * Follow us on <a href="http://twitter.com/railsbridge">Twitter</a>
-  * Work to create the community you want
+  * #{t :irc_channel} <a href="http://freenode.net/">Freenode</a>
+  * #{t :help_current_project}
+  * #{t :propose_projects}
+  * #{t :twitter_follow} <a href="http://twitter.com/railsbridge">Twitter</a>
+  * #{t :work_community}
 
 %form{ :action => "http://groups.google.com/group/railsbridge/boxsubscribe" }
   %input{ :type => "hidden", :name => "hl", :value => "en" }
-  %h4 Subscribe to the RailsBridge Group at Google
-  %p Email address:
+  %h4 #{t :subscribe}
+  %p #{t :email_address}:
   %input{ :type => "text", :name => "email", :size => 35 }
   %input{ :type => "submit", :name => "sub", :value => "Subscribe"}
 
