@@ -28,7 +28,6 @@ gem 'jquery-rails'
 group :development, :test do
   gem 'heroku'
   gem 'sqlite3'
-  gem 'cucumber-rails'
   gem 'rspec-rails'
   gem 'database_cleaner'
 end
@@ -36,4 +35,8 @@ end
 group :production do
   gem 'therubyracer-heroku'
   gem 'pg'
+end
+
+group :test do
+  gem 'cucumber-rails'
 end
